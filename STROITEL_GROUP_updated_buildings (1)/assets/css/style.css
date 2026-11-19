@@ -136,7 +136,7 @@ h1 em,h2 em{font-style:normal;color:var(--green)}
 .service-card p{font-size:12px;line-height:1.8;color:#68756d;margin:0}
 .service-card ul{margin:13px 0 0;padding-left:16px;color:#4f5d54;font-size:11px;line-height:1.9}
 .service-card--featured{background:#e6f5eb;border-color:#d0ead9}
-.service-card--dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.service-card--dark{background:var(--ink);color:#fff;border-color:var(--ink); grid-column: 2 /-1; text-align: center;}
 .service-card--dark p{color:#b8c4bc}
 .service-card--dark .service-number{color:#8a9a90}
 .service-card--dark .service-icon{background:#1c5739;color:#55df91}
@@ -149,7 +149,7 @@ h1 em,h2 em{font-style:normal;color:var(--green)}
 .about-stat{display:grid;gap:0}
 .about-stat strong{font-size:75px;line-height:1;color:var(--green)}
 .about-stat span{font-size:11px;color:#bdc8c0}
-.sro-block{border-left:1px solid #536057;padding-left:25px}
+.sro-block{border-left:5px solid #536057;padding-left:25px; grid-column: 1 / -1; width: 100%;}
 .sro-block>span{font-size:9px;letter-spacing:.14em;color:#9eada3;font-weight:800}
 .sro-block h3{font-size:21px;line-height:1.3;margin:10px 0}
 .sro-block p,.about-footnote{font-size:11px;line-height:1.8;color:#aebbb2}
@@ -190,7 +190,7 @@ h1 em,h2 em{font-style:normal;color:var(--green)}
  .focus-image img{height:390px}.focus-copy h3{font-size:26px}
  .system-image img{height:360px}.benefits-list{gap:20px 14px}.benefits-photo,.benefits-photo img{min-height:330px}
  .standards{grid-template-columns:1fr;gap:12px;margin-top:35px;padding:22px}
- .service-grid{grid-template-columns:1fr 1fr;gap:10px}.service-card{min-height:245px;padding:20px 17px}
+ .service-grid{grid-template-columns:1fr 1fr;gap:10px}.service-card{min-height:245px;padding:20px 17px; grid-column: 1 /-1}
  .service-card h3{font-size:15px}.service-card p{font-size:11px}
  .about-grid{gap:20px}.about h2{font-size:64px}.about-details{grid-template-columns:.5fr 1fr;gap:18px}
  .about-stat strong{font-size:60px}.sro-block{padding-left:17px}.sro-block h3{font-size:18px}
@@ -202,4 +202,156 @@ h1 em,h2 em{font-style:normal;color:var(--green)}
  .service-grid{grid-template-columns:1fr}.service-card{min-height:0}.service-card--featured{min-height:270px}
  .benefits-list{grid-template-columns:1fr}.about-details{grid-template-columns:1fr}.sro-block{border-left:0;border-top:1px solid #536057;padding:18px 0 0}
  .about-footnote{grid-column:auto}
+ /* EQUIPMENT SECTION */
+}
+.equipment {
+background: #17221c;
+color: #fff;
+}
+
+.equipment-heading {
+display: flex;
+justify-content: space-between;
+align-items: end;
+gap: 50px;
+margin-bottom: 55px;
+}
+
+.equipment-heading h2 {
+color: #fff;
+}
+
+.equipment-heading h2 em {
+color: var(--green);
+font-style: normal;
+}
+
+.equipment-heading .eyebrow {
+color: #aebbb3;
+}
+
+.equipment-heading p {
+max-width: 390px;
+color: #aebbb3;
+font-size: 13px;
+line-height: 1.9;
+margin: 0 0 5px;
+}
+
+.equipment-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 14px;
+}
+
+.equipment-card {
+min-height: 245px;
+padding: 27px;
+position: relative;
+background: #202d25;
+border: 1px solid rgba(255,255,255,.08);
+transition: .3s ease;
+}
+
+.equipment-card:hover {
+background: #26382d;
+border-color: var(--green);
+transform: translateY(-4px);
+}
+
+.equipment-number {
+position: absolute;
+top: 25px;
+right: 25px;
+color: #718078;
+font-size: 11px;
+font-weight: 700;
+}
+
+.equipment-icon {
+width: 45px;
+height: 45px;
+display: flex;
+align-items: center;
+justify-content: center;
+background: rgba(18,184,106,.13);
+color: var(--green);
+font-size: 25px;
+margin-bottom: 28px;
+}
+
+.equipment-card h3 {
+font-size: 19px;
+color: #fff;
+margin: 0 0 12px;
+}
+
+.equipment-card p {
+max-width: 260px;
+font-size: 11px;
+line-height: 1.8;
+color: #aebbb3;
+margin: 0;
+}
+
+.equipment-arrow {
+position: absolute;
+bottom: 24px;
+right: 25px;
+color: var(--green);
+font-size: 19px;
+opacity: 0;
+transition: .3s ease;
+}
+
+.equipment-card:hover .equipment-arrow {
+opacity: 1;
+}
+
+.equipment-footer {
+display: flex;
+justify-content: space-between;
+border-top: 1px solid rgba(255,255,255,.13);
+margin-top: 45px;
+padding-top: 22px;
+color: #aebbb3;
+font-size: 9px;
+letter-spacing: .13em;
+font-weight: 700;
+}
+
+/* TABLET */
+
+@media(max-width:900px) {
+.equipment-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+.equipment-heading {
+    gap: 25px;
+}}
+/* MOBILE */
+
+@media(max-width:680px) {
+.equipment-heading {
+display: block;
+margin-bottom: 35px;
+}
+.equipment-heading p {
+    margin-top: 20px;
+}
+
+.equipment-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.equipment-card {
+    min-height: 210px;
+    padding: 23px;
+}
+
+.equipment-footer {
+    font-size: 7px;
+    gap: 15px;
+}
 }
